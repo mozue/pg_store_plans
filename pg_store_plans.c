@@ -223,28 +223,28 @@ static int  plan_format;	/* Plan representation style in
 
 /*---- Function declarations ----*/
 
-void		_PG_init(void);
-void		_PG_fini(void);
+extern PGDLLEXPORT void		_PG_init(void);
+extern PGDLLEXPORT void		_PG_fini(void);
 
-Datum		pg_store_plans_reset(PG_FUNCTION_ARGS);
-Datum		pg_store_plans_hash_query(PG_FUNCTION_ARGS);
-Datum		pg_store_plans(PG_FUNCTION_ARGS);
-Datum		pg_store_plans_shorten(PG_FUNCTION_ARGS);
-Datum		pg_store_plans_normalize(PG_FUNCTION_ARGS);
-Datum		pg_store_plans_jsonplan(PG_FUNCTION_ARGS);
-Datum		pg_store_plans_yamlplan(PG_FUNCTION_ARGS);
-Datum		pg_store_plans_xmlplan(PG_FUNCTION_ARGS);
-Datum		pg_store_plans_textplan(PG_FUNCTION_ARGS);
+// Datum		pg_store_plans_reset(PG_FUNCTION_ARGS);
+// Datum		pg_store_plans_hash_query(PG_FUNCTION_ARGS);
+// Datum		pg_store_plans(PG_FUNCTION_ARGS);
+// Datum		pg_store_plans_shorten(PG_FUNCTION_ARGS);
+// Datum		pg_store_plans_normalize(PG_FUNCTION_ARGS);
+// Datum		pg_store_plans_jsonplan(PG_FUNCTION_ARGS);
+// Datum		pg_store_plans_yamlplan(PG_FUNCTION_ARGS);
+// Datum		pg_store_plans_xmlplan(PG_FUNCTION_ARGS);
+// Datum		pg_store_plans_textplan(PG_FUNCTION_ARGS);
 
-PG_FUNCTION_INFO_V1(pg_store_plans_reset);
-PG_FUNCTION_INFO_V1(pg_store_plans_hash_query);
-PG_FUNCTION_INFO_V1(pg_store_plans);
-PG_FUNCTION_INFO_V1(pg_store_plans_shorten);
-PG_FUNCTION_INFO_V1(pg_store_plans_normalize);
-PG_FUNCTION_INFO_V1(pg_store_plans_jsonplan);
-PG_FUNCTION_INFO_V1(pg_store_plans_textplan);
-PG_FUNCTION_INFO_V1(pg_store_plans_yamlplan);
-PG_FUNCTION_INFO_V1(pg_store_plans_xmlplan);
+PGDLLEXPORT PG_FUNCTION_INFO_V1(pg_store_plans_reset);
+PGDLLEXPORT PG_FUNCTION_INFO_V1(pg_store_plans_hash_query);
+PGDLLEXPORT PG_FUNCTION_INFO_V1(pg_store_plans);
+PGDLLEXPORT PG_FUNCTION_INFO_V1(pg_store_plans_shorten);
+PGDLLEXPORT PG_FUNCTION_INFO_V1(pg_store_plans_normalize);
+PGDLLEXPORT PG_FUNCTION_INFO_V1(pg_store_plans_jsonplan);
+PGDLLEXPORT PG_FUNCTION_INFO_V1(pg_store_plans_textplan);
+PGDLLEXPORT PG_FUNCTION_INFO_V1(pg_store_plans_yamlplan);
+PGDLLEXPORT PG_FUNCTION_INFO_V1(pg_store_plans_xmlplan);
 
 static void pgsp_shmem_startup(void);
 static void pgsp_shmem_shutdown(int code, Datum arg);
