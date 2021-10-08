@@ -34,6 +34,9 @@ set(SOURCES
   "pgsp_json_text.c"
 )
 
+link_directories(
+  "${POSTGRESQL_DIR}/lib")
+
 add_library("${LIBRARY_NAME}" SHARED ${SOURCES})
 set_target_properties("${LIBRARY_NAME}"
    PROPERTIES
@@ -49,9 +52,6 @@ include_directories(
   "${POSTGRESQL_DIR}/include/server"
   "${POSTGRESQL_DIR}/include")
 
-link_directories(
-  "${POSTGRESQL_DIR}/lib")
-
 target_link_libraries("${LIBRARY_NAME}"
   "postgres.lib")
 
@@ -63,7 +63,10 @@ install(FILES
   DESTINATION "${EXTENSION_DATA_DIR}")
 
 install(FILES
-  "${PROJECT_SOURCE_DIR}/${PROJECT_ID}--${VERSION_FULL}.sql"
+  "pg_store_plans--1.1--1.2.sql"
+  "pg_store_plans--1.2--1.3.sql"
+  "pg_store_plans--1.3.1.sql"
+  "pg_store_plans--1.3--1.3.1.sql"
   DESTINATION "${EXTENSION_DATA_DIR}")
 
 set(CPACK_GENERATOR "ZIP")
